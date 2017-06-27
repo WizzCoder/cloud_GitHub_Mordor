@@ -13,15 +13,9 @@ public class ToDo {
 		todoList.add("2,Leta");
 		todoList.add("3,Mask");
 		todoList.add("4,Ask");
-		todoList.add("5,Kask");
-
-		
-		
-		
-		
-		
+		todoList.add("5,Kask");	
 	}
-
+	
 	public static int getTodoListSize(){
 		return todoList.size();
 	}
