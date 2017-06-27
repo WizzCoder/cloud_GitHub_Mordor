@@ -10,6 +10,8 @@ public class ToDo {
 		todoList = new ArrayList<String>();
 		todoList.add("0,Hans");
 		todoList.add("1,Greta");
+		todoList.add("2,Leta");
+		todoList.add("3,Mask");
 		
 		
 	}
