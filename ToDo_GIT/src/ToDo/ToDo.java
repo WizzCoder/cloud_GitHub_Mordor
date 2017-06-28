@@ -2,12 +2,13 @@ package ToDo;
 
 import java.util.ArrayList;
 
-import Errata.YadaException;
+import Errata.ToDoException;
+import ui.uiLogic;
 
 public class ToDo {
 	static ArrayList<String> todoList;
 	
-	public ToDo() throws YadaException
+	public ToDo() throws ToDoException
 	{
 		try
 		{
@@ -27,7 +28,7 @@ public class ToDo {
 		}
 		catch (Exception e){
 			e.printStackTrace();
-			throw new YadaException();
+			throw new ToDoException();
 		}
 	}
 	
@@ -36,7 +37,7 @@ public class ToDo {
 		return todoList.size();
 	}
 	
-	public static void addTodoItems(String toDoItems) throws YadaException
+	public static void addTodoItems(String toDoItems) throws ToDoException
 	{
 //		int nextIndex=0;
 //		nextIndex = getTodoListSize();
@@ -46,13 +47,31 @@ public class ToDo {
 		}
 		catch (NullPointerException e)
 		{
-			throw new YadaException();
+			throw new ToDoException();
 		}
 		
 		// todoList.add(nextIndex, toDoItems);
 	}
 	
-	
+	public static void addTodoItem() throws ToDoException
+	{
+//		int nextIndex=0;
+//		nextIndex = getTodoListSize();
+
+		String addTodoItemString = "";
+		addTodoItemString=uiLogic.checkKeyboard();
+		
+		try
+		{
+			todoList.add(addTodoItemString);
+		}
+		catch (NullPointerException e)
+		{
+			throw new ToDoException();
+		}
+		
+		// todoList.add(nextIndex, toDoItems);
+	}
 	
 	
 	

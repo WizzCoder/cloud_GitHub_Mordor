@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import Errata.YadaException;
+import Errata.ToDoException;
 
 public class xmlMaster {
 
@@ -21,11 +21,11 @@ public class xmlMaster {
 	{
 			try {
 				mainMenu();
-			} catch (YadaException e) {
+			} catch (ToDoException e) {
 			}
 	}
 		
-	public static void mainMenu() throws YadaException
+	public static void mainMenu() throws ToDoException
 	{	
 		try
 		{
@@ -35,7 +35,7 @@ public class xmlMaster {
 		}
 		catch (NullPointerException e)
 		{
-			throw new YadaException();
+			throw new ToDoException();
 		}
 		
 		
