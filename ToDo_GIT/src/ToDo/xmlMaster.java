@@ -1,26 +1,47 @@
 package ToDo;
 
 import java.io.IOException;
-import java.util.Map;
+import java.util.ArrayList;
+// import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import Errata.YadaException;
 
 public class xmlMaster {
 
 	static String action = "";
-	// static ArrayList<String> todoList;
-	static Map<Integer, String> mapList;
+	static ArrayList<String> todoList;
+//	static Map<Integer, String> mapList;
 
 	static String pXML = "";
 	static Integer myIntegers;
 
-	public static void main(String[] args){
+	public static void main(String[] args)
+	{
+			try {
+				mainMenu();
+			} catch (YadaException e) {
+			}
+	}
+		
+	public static void mainMenu() throws YadaException
+	{	
+		try
+		{
+			System.out.println("Kom vi hit");
+			ToDo.addTodoItems("Dishes");
+			ToDo.printToDoListAllItems();
+		}
+		catch (NullPointerException e)
+		{
+			throw new YadaException();
+		}
+		
+		
 
-
-		ToDo to = new ToDo();
-		ToDo.addTodoItems("Dishes");
-
-		ToDo.printToDoListAllItems();
+		
+		
 
 		pXML += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
 				+ "<head>\n" + "<body>\n" +
@@ -33,8 +54,8 @@ public class xmlMaster {
 
 		System.out.println(pXML);
 
-		action = "save";
-		xmlAction(action);
+//		action = "save";
+//		xmlAction(action);
 	}
 
 	public static void xmlAction(String action) {

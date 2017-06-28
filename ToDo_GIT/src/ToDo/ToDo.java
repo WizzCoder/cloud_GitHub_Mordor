@@ -2,32 +2,53 @@ package ToDo;
 
 import java.util.ArrayList;
 
+import Errata.YadaException;
+
 public class ToDo {
 	static ArrayList<String> todoList;
 	
-	public ToDo(){
+	public ToDo() throws YadaException
+	{
+		try
+		{
+			todoList = new ArrayList<String>();
+			todoList.add("Hans");
+			todoList.add("Greta");
+	//		todoList.add("Leta");
+	//		todoList.add("Mask");
+	//		todoList.add("Ask");
+	//		todoList.add("Kask");	
 		
-		todoList = new ArrayList<String>();
-		todoList.add("Hans");
-		todoList.add("Greta");
-//		todoList.add("Leta");
-//		todoList.add("Mask");
-//		todoList.add("Ask");
-//		todoList.add("Kask");	
+			// printToDoListAllItems();
+		
+		
+		
+		
+		}
+		catch (Exception e){
+			e.printStackTrace();
+			throw new YadaException();
+		}
 	}
-	
-	
 	
 	
 	public static int getTodoListSize(){
 		return todoList.size();
 	}
 	
-	public static void addTodoItems(String toDoItems)
+	public static void addTodoItems(String toDoItems) throws YadaException
 	{
 //		int nextIndex=0;
 //		nextIndex = getTodoListSize();
-		todoList.add(toDoItems);
+		try
+		{
+			todoList.add(toDoItems);
+		}
+		catch (NullPointerException e)
+		{
+			throw new YadaException();
+		}
+		
 		// todoList.add(nextIndex, toDoItems);
 	}
 	
