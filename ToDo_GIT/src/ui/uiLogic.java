@@ -1,0 +1,54 @@
+package ui;
+
+import java.util.Scanner;
+import ToDo.ToDo;
+public class uiLogic {
+
+	private static String uiLogic_command;
+	private static String keyOutput;
+	private static String hubba2;
+	private static String hubba3;
+
+	public static void mainBusinessLogic() {
+		uiLogic_command = "ADD";
+		execAction(uiLogic_command);
+	}
+
+	public static void execAction(String uiLogic_command)
+	{
+		switch(uiLogic_command)
+		{
+	//		case "ADD": ToDo.addTodoItems(uiLogic_command); break;
+//			default: 
+		}
+
+	}
+	
+	public static String checkKeyboard()
+	{
+		// errEvent = false;
+		boolean errCheckString = false;
+		String dummy="";
+		while (true) 
+		{
+			Scanner sc = new Scanner(System.in);
+			while (errCheckString != true) 
+			{
+				try 
+				{ 	
+					dummy = sc.nextLine();
+					sc.close(); 
+					return dummy;
+				}
+				catch (Exception e)
+				{ e.printStackTrace();}
+
+				return dummy;	
+			}
+			return dummy;
+		}
+		
+	}
+
+
+}

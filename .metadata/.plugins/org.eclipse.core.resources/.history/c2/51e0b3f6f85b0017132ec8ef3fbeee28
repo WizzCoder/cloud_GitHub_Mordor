@@ -1,0 +1,8 @@
+package Errata;
+
+@SuppressWarnings("serial")
+public class YadaException extends Exception {
+
+	//System.out.println("Yauwszzzza");
+	
+}

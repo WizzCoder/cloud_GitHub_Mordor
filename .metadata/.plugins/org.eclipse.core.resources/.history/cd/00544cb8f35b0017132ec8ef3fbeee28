@@ -1,0 +1,16 @@
+package JAXB;
+
+
+import java.util.List;
+
+import javax.xml.parsers.SAXParser;
+
+public class TestRead {
+    public static void main(String args[]) {
+        SAXParser read = new SAXParser();
+        List<Item> readConfig = (((List) read).readConfig("config.xml");
+        for (Item item : readConfig) {
+            System.out.println(item);
+        }
+    }
+}

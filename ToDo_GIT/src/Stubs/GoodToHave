@@ -1,0 +1,14 @@
+	
+//	 * 
+//	 * 
+//	 * 
+//	 * ADD(); break; // CREATE case 2: execLIST(); break; // RETRIVE case 3:
+//	 * execUPDATE(); break; // UPDATE case 4: execREMOVE(); break; // DELETE
+//	 * 
+//	 * case 5: execREMOVE_ALL(); break; // DELETE ALL case 6: execMARK(); break;
+//	 * // MARK case 7: execSEARCH(); break; // SEARCH case 8: execMARK(); break;
+//	 * // case 9: execMARK(); break; case 10: execREMOVE_ALL(); break;
+//	 * 
+//	 * case 0: execEXIT(); break;
+//	 * 
+	

@@ -1,0 +1,8 @@
+package JAXB;
+
+public class StartXML {
+
+	TestRead tr = new TestRead();
+	
+	
+}

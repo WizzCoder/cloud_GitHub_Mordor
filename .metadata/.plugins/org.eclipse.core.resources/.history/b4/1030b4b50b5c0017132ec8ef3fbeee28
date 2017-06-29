@@ -1,0 +1,75 @@
+package ui;
+
+import java.util.Scanner;
+
+import ToDo.ToDo;
+
+public class uiLogic {
+
+	private static String uiLogic_command;
+	private static String keyOutput;
+
+	public static void mainBusinessLogic() {
+
+		uiLogic_command = "ADD";
+		execAction(uiLogic_command);
+
+	}
+
+	public static void execAction(String uiLogic_command)
+	{
+		switch(uiLogic_command)
+		{
+			case "ADD": 
+				ToDo.addTodoItems(uiLogic_command);
+				break;
+		
+			case "MOVE":
+				break;
+		
+		}
+
+	}
+
+	
+	 * 
+	 * 
+	 * 
+	 * ADD(); break; // CREATE case 2: execLIST(); break; // RETRIVE case 3:
+	 * execUPDATE(); break; // UPDATE case 4: execREMOVE(); break; // DELETE
+	 * 
+	 * case 5: execREMOVE_ALL(); break; // DELETE ALL case 6: execMARK(); break;
+	 * // MARK case 7: execSEARCH(); break; // SEARCH case 8: execMARK(); break;
+	 * // case 9: execMARK(); break; case 10: execREMOVE_ALL(); break;
+	 * 
+	 * case 0: execEXIT(); break;
+	 * 
+	
+	public static String keyOutput checkKeyboard() 
+	{
+		// errEvent = false;
+		boolean errCheckInt = false;
+		int dummy=0;
+		while (true) 
+		{
+			Scanner sc = new Scanner(System.in);
+			while (errCheckInt != true) 
+			{
+				try 
+				{ 	
+					dummy = sc.nextLine();
+					sc.close(); 
+					break;
+				}
+				catch (Exception e)
+				{ e.printStackTrace();}
+				
+				return dummy;	
+
+			}
+			return 0;
+		}
+
+	}
+
+

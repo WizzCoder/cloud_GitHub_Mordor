@@ -1,0 +1,89 @@
+package ToDo;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import Errata.YadaException;
+
+public class xmlMaster {
+
+	static String action = "";
+	// static ArrayList<String> todoList;
+	static Map<Integer, String> mapList;
+
+	static String pXML = "";
+	static Integer myIntegers;
+
+	public static void main(String[] args) throws YadaException
+	
+	{
+
+
+		
+		try
+		{
+			ToDo.addTodoItems("Dishes");
+		}
+		catch (NullPointerException e)
+		{
+			throw new YadaException();
+		}
+		
+		
+		ToDo.printToDoListAllItems();
+
+		pXML += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+				+ "<head>\n" + "<body>\n" +
+				"<person gender='female'>\n" +
+				"<firstname>\n" + ToDo.todoList.get(0) + "\n</firstname>\n" +
+				"<lastname>\nSmith\n</lastname>\n" +
+				"</person>\n" +
+				"</body>\n" + 
+				"</head>";
+
+		System.out.println(pXML);
+
+//		action = "save";
+//		xmlAction(action);
+	}
+
+	public static void xmlAction(String action) {
+		switch (action) {
+
+		case "save": {
+			// Using XmlIO to save an object to file, errors are unexpected
+			// (write protected files)
+			try {
+				XmlIO.saveObject("todolist.xml", xmlMaster.pXML);
+				// XmlIO.saveObject("todolist.xml", todoList);
+				System.out.println("Yihaaaaa: xmlfile written");
+				break;
+			} catch (IOException ex) {
+				Logger.getLogger(ToDo.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		} // case: save
+
+		// case "load": {
+		// // Loading with XmlIO, in this case the file might be missing.
+		// try {
+		// todoList = XmlIO.loadObject("todolist.xml", TodoList.class);
+		// } catch (IOException ex) {
+		// System.out.println("Could not load todolist.xml");
+		// }
+		// break;
+		//
+		// //Where TodoList.class is a seperate class containing the collection
+		// to be saved to xml
+		// //Add default constructor and use public fields in TodoList.class
+		// //data is the object to be saved to xml
+		// //The xml file should be placed in the root of the project
+		//
+		// } // case: load
+
+		} // switch
+
+	} // xmlAction
+
+} // end of class

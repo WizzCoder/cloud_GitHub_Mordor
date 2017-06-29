@@ -1,0 +1,14 @@
+package ToDo;
+
+public class ToDoStarter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ToDo_Init init = new ToDo_Init();
+		init.notify();
+		
+		
+	}
+
+}
