@@ -6,7 +6,7 @@ public class ToDoStarter {
 		// TODO Auto-generated method stub
 
 		ToDoInit init = new ToDoInit();
-		init.notify();
+		init.uiMenu();
 		
 		
 	}
